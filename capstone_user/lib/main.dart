@@ -3,8 +3,16 @@ import 'package:capstone_user/communityPage.dart';
 import 'package:capstone_user/profilePage.dart';
 import 'package:capstone_user/tradeMarketPage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:kakao_flutter_sdk_common/kakao_flutter_sdk_common.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: "assets/env/.env");
+  KakaoSdk.init(
+    nativeAppKey: dotenv.env['KAKAO_NATIVE_APP_KEY'],
+  );
   runApp(const MyApp());
 }
 
