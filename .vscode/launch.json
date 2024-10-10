@@ -1,0 +1,11 @@
+{
+  "configurations": [
+    {
+      "name": "capstone_user (Flutter)",
+      "program": "lib/main.dart",
+      "cwd": "capstone_user",
+      "request": "launch",
+      "type": "dart"
+    }
+  ]
+}
