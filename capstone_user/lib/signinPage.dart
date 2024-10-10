@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MyApp extends StatelessWidget {
+class Signinpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -199,8 +199,7 @@ class MyApp extends StatelessWidget {
                     },
                     child: Text('회원가입'),
                   ),
-                )
-            ),
+                )),
           ],
         ),
       ),

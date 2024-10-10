@@ -1,5 +1,7 @@
 import 'package:capstone_user/clubListPage.dart';
 import 'package:capstone_user/communityPage.dart';
+import 'package:capstone_user/profilePage.dart';
+import 'package:capstone_user/tradeMarketPage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -68,23 +70,5 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
-  }
-}
-
-class TradeMarketPage extends StatelessWidget {
-  const TradeMarketPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(child: Text('중고거래 페이지'));
-  }
-}
-
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(child: Text('프로필 페이지'));
   }
 }
