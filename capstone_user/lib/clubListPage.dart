@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ClubListPage extends StatelessWidget {
-  const ClubListPage({Key? key}) : super(key: key);
+  const ClubListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,14 +11,14 @@ class ClubListPage extends StatelessWidget {
         itemCount: 10, // 임시로 10개의 아이템을 표시
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            padding: const EdgeInsets.symmetric(vertical: 3.0),
             child: Card(
-              elevation: 4.0,
+              elevation: 2.0,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.0),
+                borderRadius: BorderRadius.circular(8.0),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(14.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -37,9 +37,10 @@ class ClubListPage extends StatelessWidget {
                       child: ElevatedButton(
                         child: const Text('가입신청'),
                         style: ElevatedButton.styleFrom(
+                          foregroundColor: Colors.white,
                           backgroundColor: const Color(0xFF696CFF),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(14.0),
+                            borderRadius: BorderRadius.circular(8.0),
                           ),
                         ),
                         onPressed: () {

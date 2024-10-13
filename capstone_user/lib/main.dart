@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Main Page'),
+        title: const Text('여기모여'),
       ),
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
