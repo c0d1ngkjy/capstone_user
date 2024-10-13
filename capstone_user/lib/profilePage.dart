@@ -1,3 +1,4 @@
+import 'package:capstone_user/loginPage.dart';
 import 'package:capstone_user/signinPage.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,7 @@ class ProfilePage extends StatelessWidget {
                 onPressed: () {
                   // Navigate to second route when tapped.
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SigninPage()));
+                      MaterialPageRoute(builder: (context) => LoginPage()));
                 },
               ),
             ],
