@@ -1,4 +1,5 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.android">
     <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:label="capstone_user"
@@ -14,6 +15,7 @@
 
                 <!-- "kakao${YOUR_NATIVE_APP_KEY}://oauth" 형식의 앱 실행 스킴 설정 -->
                 <!-- 카카오 로그인 Redirect URI -->
+                <!-- <data android:scheme="kakao${KAKAO_NATIVE_APP_KEY}" android:host="oauth"/> -->
                 <data android:scheme="kakao${KAKAO_NATIVE_APP_KEY}" android:host="oauth"/>
             </intent-filter>
         </activity>
@@ -35,8 +37,12 @@
               android:resource="@style/NormalTheme"
               />
             <intent-filter>
+                <!-- <data android:host="kakaolink" android:scheme="kakao${KAKAO_NATIVE_APP_KEY}" /> -->
                 <data android:host="kakaolink" android:scheme="kakao${KAKAO_NATIVE_APP_KEY}" />
                 <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>

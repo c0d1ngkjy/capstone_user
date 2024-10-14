@@ -14,16 +14,16 @@ class KakaoOAuthService {
   // 로그인 메서드
   Future<void> login(BuildContext context) async {
     try {
-      print('========== 카카오 로그인 시작');
+      print('카카오 로그인 시작');
       final authCode = await _getAuthorizationCode();
       if (authCode != null) {
-        print('========== 인증 코드 획득: $authCode');
+        print('인증 코드 획득: $authCode');
         await _requestToken(authCode, context);
       } else {
-        throw '========== 인증 코드가 없습니다';
+        throw '인증 코드가 없습니다';
       }
     } catch (e) {
-      print('========== 로그인 오류: $e');
+      print('로그인 오류: $e');
     }
   }
 
@@ -31,11 +31,11 @@ class KakaoOAuthService {
     final authorizationUrl = Uri.parse(
         '$_authorizationEndpoint?client_id=$_clientId&redirect_uri=$_redirectUri&response_type=code');
 
-    print('========== 인증 URL 열기: $authorizationUrl');
+    print('인증 URL 열기: $authorizationUrl');
     if (await canLaunchUrl(authorizationUrl)) {
       await launchUrl(authorizationUrl);
     } else {
-      throw '========== $authorizationUrl을 열 수 없습니다';
+      throw '$authorizationUrl을 열 수 없습니다';
     }
 
     // Try to get the initial link
@@ -44,11 +44,11 @@ class KakaoOAuthService {
       if (initialLink != null) {
         final uri = Uri.parse(initialLink);
         final code = uri.queryParameters['code'];
-        print('========== 추출된 코드: $code');
+        print('추출된 코드: $code');
         return code;
       }
     } catch (e) {
-      print('========== 링크 처리 오류: $e');
+      print('링크 처리 오류: $e');
     }
 
     // Set up a listener for deep links (redirect URI)
@@ -57,7 +57,7 @@ class KakaoOAuthService {
       if (link != null) {
         final uri = Uri.parse(link as String);
         final code = uri.queryParameters['code'];
-        print('========== 스트림에서 추출된 코드: $code');
+        print('스트림에서 추출된 코드: $code');
         if (code != null) return code;
       }
     }
@@ -82,10 +82,10 @@ class KakaoOAuthService {
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
       final accessToken = data['access_token'];
-      print('========== 액세스 토큰: $accessToken');
+      print('액세스 토큰: $accessToken');
       _onLoginSuccess(context, accessToken); // 성공 시 추가 작업 수행
     } else {
-      throw '========== 액세스 토큰 요청 실패: ${response.body}';
+      throw '액세스 토큰 요청 실패: ${response.body}';
     }
   }
 
@@ -97,7 +97,7 @@ class KakaoOAuthService {
       ),
     );
 
-    print('========== 로그인 성공! 액세스 토큰: $accessToken');
+    print('로그인 성공 액세스 토큰: $accessToken');
 
     // Future.delayed(Duration(seconds: 2), () {
     //   // 예: 다른 페이지로 이동하거나 추가 작업 수행
