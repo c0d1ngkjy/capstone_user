@@ -1,0 +1,29 @@
+name: capstone_user_2
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  kakao_flutter_sdk: ^1.9.5 # 전체 추가
+  kakao_flutter_sdk_user: ^1.9.5 # 카카오 로그인 API 패키지
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+
+flutter:
+  assets:
+    - assets/image/
+  uses-material-design: true
+
