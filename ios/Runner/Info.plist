@@ -29,7 +29,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>kakao${a4874bd8fcd66978a2b38a63f1ad2bd6}</string>
+				<string>kakao${}</string>
 			</array>
 		</dict>
 	</array>
